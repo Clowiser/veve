@@ -7,6 +7,6 @@ class HomeController extends Controller
 {
     public function showHome()
     {
-        return "Page Acceuil";
+        return view('welcome');
     }
 }
