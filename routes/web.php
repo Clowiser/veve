@@ -1,5 +1,8 @@
 <?php
 
+use App\Http\Controllers\CartController;
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\ProductController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -16,3 +19,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+Route::get('Home', [HomeController::class, 'showHome']);
+Route::get('product', [ProductController::class, 'showListe']);
+Route::get('product/1',[ProductController::class, 'showProduit']);
+Route::get('cart', [CartController::class, 'showCart']);

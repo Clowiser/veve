@@ -22,6 +22,10 @@
     </head>
     <body class="antialiased">
     <h1>Hello World From Laravel v{{ Illuminate\Foundation\Application::VERSION }} (PHP v{{ PHP_VERSION }})</h1>
+    <a href="{{ url('/Home') }}" class="text-sm text-gray-700 dark:text-gray-500 underline">Home</a>
+    <a href="{{ url('/product') }}" class="text-sm text-gray-700 dark:text-gray-500 underline">Liste des produits</a>
+    <a href="{{ url('/product/1') }}" class="text-sm text-gray-700 dark:text-gray-500 underline">Détails produit</a>
+    <a href="{{ url('/cart') }}" class="text-sm text-gray-700 dark:text-gray-500 underline">Panier</a>
         <div class="relative flex items-top justify-center min-h-screen bg-gray-100 dark:bg-gray-900 sm:items-center sm:pt-0">
             @if (Route::has('login'))
                 <div class="hidden fixed top-0 right-0 px-6 py-4 sm:block">
