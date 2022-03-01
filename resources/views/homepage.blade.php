@@ -12,7 +12,7 @@
          </div>
          <div @class("card-body")>
              <h5 @class("card-title")>Bienvenue à tous!</h5>
-             <p @class("card-text")>Vous avez besoin d'avoir du style pour vos entraînements ? Alors n'hésitez pas à voir notre boutique !</p>
+             <p @class("card-text")>Meilleurs site de vente de gemmes en ligne !</p>
          </div>
          <div @class('card-footer bg-dark')>
              <a href="{{ url('/product') }}" class="btn btn-outline-light">Voir notre boutique</a>
