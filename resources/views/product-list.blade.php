@@ -18,12 +18,12 @@
                         <h6>&dollar;22,495&ast;</h6>
                     </div>
                     <hr class="mt-2 mx-3">
-                    <div class="d-flex flex-row justify-content-between px-3 pb-4">
+                    <div class="d-flex flex-row justify-content-between px-3 ">
                         <div class="d-flex flex-column"><span class="text-muted">Fuel Efficiency</span><small class="text-muted">L/100KM&ast;</small></div>
                         
                     </div>
                     
-                    <div class="mx-3 mt-3 mb-2"><button type="button" class="btn btn-danger btn-block"><small>BUILD & PRICE</small></button></div> <small class="d-flex justify-content-center text-muted">*Legal Disclaimer</small>
+                    <div class="mx-3 mb-2"><a href="{{url('/product/1')}}" class="btn btn-outline-primary btn-block"><small>BUILD & PRICE</small></a></div> <small class="d-flex justify-content-center text-muted">*Legal Disclaimer</small>
                 </div>
             </div>
         </div>
@@ -34,12 +34,13 @@
                         <h6>&dollar;22,495&ast;</h6>
                     </div>
                     <hr class="mt-2 mx-3">
-                    <div class="d-flex flex-row justify-content-between px-3 pb-4">
+                    <div class="d-flex flex-row justify-content-between px-3">
                         <div class="d-flex flex-column"><span class="text-muted">Fuel Efficiency</span><small class="text-muted">L/100KM&ast;</small></div>
                         
                     </div>
                     
-                    <div class="mx-3 mt-3 mb-2"><button type="button" class="btn btn-danger btn-block"><small>BUILD & PRICE</small></button></div> <small class="d-flex justify-content-center text-muted">*Legal Disclaimer</small>
+                    
+                    <div class="mx-3 mb-2"><a href="{{url('/product/2')}}" class="btn btn-outline-primary btn-block"><small>BUILD & PRICE</small></a></div> <small class="d-flex justify-content-center text-muted">*Legal Disclaimer</small>
                 </div>
             </div>
         </div>
@@ -50,12 +51,12 @@
                         <h6>&dollar;22,495&ast;</h6>
                     </div>
                     <hr class="mt-2 mx-3">
-                    <div class="d-flex flex-row justify-content-between px-3 pb-4">
+                    <div class="d-flex flex-row justify-content-between px-3">
                         <div class="d-flex flex-column"><span class="text-muted">Fuel Efficiency</span><small class="text-muted">L/100KM&ast;</small></div>
                         
                     </div>
                     
-                    <div class="mx-3 mt-3 mb-2"><button type="button" class="btn btn-danger btn-block"><small>BUILD & PRICE</small></button></div> <small class="d-flex justify-content-center text-muted">*Legal Disclaimer</small>
+                    <div class="mx-3 mb-2"><a href="{{url('/product/3')}}" class="btn btn-outline-primary btn-block"><small>BUILD & PRICE</small></a></div> <small class="d-flex justify-content-center text-muted">*Legal Disclaimer</small>
                 </div>
             </div>
         </div>
