@@ -11,7 +11,7 @@ class ProductController extends Controller
         return view('product-list');
     }
 
-    public function showProduit($id)
+    public function showProduit(int $id)
     {
         return view('product-details', ['name' => $id]);
     }

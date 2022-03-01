@@ -9,7 +9,7 @@
 
 
 
-<div class="container-fluid d-flex justify-content-center">
+<div class="container-fluid d-flex justify-content-center margin">
     <div class="row mt-5">
         <div class="col-sm-4">
             <div class="card"> <img src="{{URL::asset('img/gemme.png') }}" class="card-img-top" width="100%">
@@ -23,7 +23,7 @@
                         
                     </div>
                     
-                    <div class="mx-3 mb-2"><a href="{{url('/product/1')}}" class="btn btn-outline-primary btn-block rounded-pill"><small>BUILD & PRICE</small></a></div> <small class="d-flex justify-content-center text-muted">*Legal Disclaimer</small>
+                    <div class="mx-3 mb-2"><a href="{{url('/cart')}}" class="btn btn-outline-primary btn-block rounded-pill">Acheter maintenant</a></div> <a href="{{url('/product/1')}}" class="d-flex justify-content-center text-muted">en savoir plus</a>
                 </div>
             </div>
         </div>
@@ -40,7 +40,7 @@
                     </div>
                     
                     
-                    <div class="mx-3 mb-2"><a href="{{url('/product/2')}}" class="btn btn-outline-primary btn-block rounded-pill"><small>BUILD & PRICE</small></a></div> <small class="d-flex justify-content-center text-muted">*Legal Disclaimer</small>
+                    <div class="mx-3 mb-2"><a href="{{url('/cart')}}" class="btn btn-outline-primary btn-block rounded-pill">Acheter maintenant</a></div> <a href="{{url('/product/2')}}" class="d-flex justify-content-center text-muted">en savoir plus</a>
                 </div>
             </div>
         </div>
@@ -56,7 +56,7 @@
                         
                     </div>
                     
-                    <div class="mx-3 mb-2"><a href="{{url('/product/3')}}" class="btn btn-outline-primary btn-block rounded-pill"><small>BUILD & PRICE</small></a></div> <small class="d-flex justify-content-center text-muted">*Legal Disclaimer</small>
+                    <div class="mx-3 mb-2"><a href="{{url('/cart')}}" class="btn btn-outline-primary btn-block rounded-pill">Acheter maintenant</a></div> <a href="{{url('/product/3')}}" class="d-flex justify-content-center text-muted">en savoir plus</a>
                 </div>
             </div>
         </div>
