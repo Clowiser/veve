@@ -7,7 +7,7 @@ Cart
 @section('contenu')
 
 
-<div class="card">
+<div class="card-panier">
     <div class="row">
         <div class="col-md-8 cart">
             <div class="title">

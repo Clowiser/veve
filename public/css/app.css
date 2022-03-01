@@ -12,7 +12,7 @@
         margin-bottom: 5vh
     }
     
-    .card {
+    .card-panier {
         margin: auto;
         max-width: 950px;
         width: 90%;
@@ -22,7 +22,7 @@
     }
     
     @media(max-width:767px) {
-        .card {
+        .card-panier {
             margin: 3vh auto
         }
     }
