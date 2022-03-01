@@ -4,13 +4,12 @@
     <meta charset=UTF-8">
     <title>@yield('titre')</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
-    <link href="{{ URL::asset('css/test.css'); }}" rel="stylesheet">
-
+    <link href="{{ URL::asset('css/test.css') }}" rel="stylesheet">
 </head>
 <body>
 <nav class="navbar navbar-expand-lg navbar-light bg-light margin-navbar">
     <div class="container-fluid">
-        <a class="navbar-brand" href="{{url('home')}}">VeveGems</a>
+        <a class="navbar-brand" href="{{url('home')}}"><img src="{{ URL::asset('img/logo.jpg') }}" alt="logo_site" @class('rounded-circle')></a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
