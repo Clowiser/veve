@@ -20,7 +20,7 @@ Cart
             </div>
             <div class="row border-top border-bottom">
                 <div class="row main align-items-center">
-                    <div class="col-2"><img class="img-fluid" src="https://preview.redd.it/rmhf4o627jp71.jpg?auto=webp&s=892bf4cc6b56b15cdbd48c3901f5bb48cc286042"></div>
+                    <div class="col-2"><img class="img-fluid" src="{{URL::asset('img/gemme.png') }}"></div>
                     <div class="col">
                         <div class="row text-muted">Gemme</div>
                         <div class="row">Gemme 20%</div>
@@ -31,7 +31,7 @@ Cart
             </div>
             <div class="row">
                 <div class="row main align-items-center">
-                    <div class="col-2"><img class="img-fluid" src="https://preview.redd.it/rmhf4o627jp71.jpg?auto=webp&s=892bf4cc6b56b15cdbd48c3901f5bb48cc286042"></div>
+                    <div class="col-2"><img class="img-fluid" src="{{URL::asset('img/gemme.png') }}"></div>
                     <div class="col">
                         <div class="row text-muted">Gemme</div>
                         <div class="row">Gemme 10% </div>
@@ -42,7 +42,7 @@ Cart
             </div>
             <div class="row border-top border-bottom">
                 <div class="row main align-items-center">
-                    <div class="col-2"><img class="img-fluid" src="https://preview.redd.it/rmhf4o627jp71.jpg?auto=webp&s=892bf4cc6b56b15cdbd48c3901f5bb48cc286042"></div>
+                    <div class="col-2"><img class="img-fluid" src="{{URL::asset('img/gemme.png') }}"></div>
                     <div class="col">
                         <div class="row text-muted">Gemme</div>
                         <div class="row">Gemme 15%</div>
