@@ -7,7 +7,7 @@
     <link href="{{ URL::asset('css/app.css') }}" rel="stylesheet">
 </head>
 <body>
-<nav class="navbar navbar-expand-lg navbar-light bg-light margin-navbar">
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark margin-navbar">
     <div class="container-fluid">
         <a class="navbar-brand" href="{{url('home')}}"><img src="{{ URL::asset('img/logo.jpg') }}" alt="logo_site" @class('rounded-circle')></a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">

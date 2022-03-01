@@ -34,13 +34,13 @@
                         <span class="review-no">NB reviews</span>
                     </div>
                     <p class="product-description">description produit</p>
-                    <h4 class="price">current price: <span>$180</span></h4>
+                    <h4 class="price">current price: <span>180 €</span></h4>
                     <p class="vote"><strong>100%</strong> of buyers enjoyed this product! <strong>(4 votes)</strong></p>
                 
                     
                     <div class="action">
-                        <a href="{{url('/product')}}" class="add-to-cart btn btn-default"> ajouter au panier </a>
-                        <a href="{{url('/cart')}}" class="add-to-cart btn btn-default"> acheter maintenant </a>
+                        <a href="{{url('/product')}}" class="add-to-cart btn btn-dark rounded-pill"> ajouter au panier </a>
+                        <a href="{{url('/cart')}}" class="add-to-cart btn btn-default rounded-pill"> acheter maintenant </a>
                         
                     </div>
                 </div>

@@ -71,7 +71,7 @@ Cart
             <div class="row" style="border-top: 1px solid rgba(0,0,0,.1); padding: 2vh 0;">
                 <div class="col">TOTAL PRICE</div>
                 <div class="col text-right">&euro; 4505</div>
-            </div> <button class="btn">CHECKOUT</button>
+            </div> <button class="btn btn-outline-primary rounded-pill">Payer</button>
         </div>
     </div>
 </div>
