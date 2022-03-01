@@ -22,8 +22,8 @@ Cart
                 <div class="row main align-items-center">
                     <div class="col-2"><img class="img-fluid" src="https://preview.redd.it/rmhf4o627jp71.jpg?auto=webp&s=892bf4cc6b56b15cdbd48c3901f5bb48cc286042"></div>
                     <div class="col">
-                        <div class="row text-muted">Gème</div>
-                        <div class="row">Gème 20%</div>
+                        <div class="row text-muted">Gemme</div>
+                        <div class="row">Gemme 20%</div>
                     </div>
                     <div class="col"> <a href="#">-</a><a href="#" class="border">3420</a><a href="#">+</a> </div>
                     <div class="col">&euro; 2500 <span class="close">&#10005;</span></div>
@@ -33,8 +33,8 @@ Cart
                 <div class="row main align-items-center">
                     <div class="col-2"><img class="img-fluid" src="https://preview.redd.it/rmhf4o627jp71.jpg?auto=webp&s=892bf4cc6b56b15cdbd48c3901f5bb48cc286042"></div>
                     <div class="col">
-                        <div class="row text-muted">Gème</div>
-                        <div class="row">Gème 10% </div>
+                        <div class="row text-muted">Gemme</div>
+                        <div class="row">Gemme 10% </div>
                     </div>
                     <div class="col"> <a href="#">-</a><a href="#" class="border">627</a><a href="#">+</a> </div>
                     <div class="col">&euro; 500 <span class="close">&#10005;</span></div>
@@ -44,8 +44,8 @@ Cart
                 <div class="row main align-items-center">
                     <div class="col-2"><img class="img-fluid" src="https://preview.redd.it/rmhf4o627jp71.jpg?auto=webp&s=892bf4cc6b56b15cdbd48c3901f5bb48cc286042"></div>
                     <div class="col">
-                        <div class="row text-muted">Gème</div>
-                        <div class="row">Gème 15%</div>
+                        <div class="row text-muted">Gemme</div>
+                        <div class="row">Gemme 15%</div>
                     </div>
                     <div class="col"> <a href="#">-</a><a href="#" class="border">1966</a><a href="#">+</a> </div>
                     <div class="col">&euro; 1500 <span class="close">&#10005;</span></div>
