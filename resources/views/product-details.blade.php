@@ -13,7 +13,7 @@
                 <div class="preview col-md-6">
                     
                     <div class="preview-pic tab-content img-gemme">
-                      <div class="tab-pane active" id="pic-1"><img src="{{URL::asset('img/gemme.png') }}" /></div>
+                      <div class="tab-pane active" id="pic-1"><img src="{{ $img }}" /></div>
                       <div class="tab-pane" id="pic-2"><img src="{{URL::asset('img/gemme.png') }}" /></div>
                       <div class="tab-pane" id="pic-3"><img src="{{URL::asset('img/gemme.png') }}" /></div>
                       <div class="tab-pane" id="pic-4"><img src="{{URL::asset('img/gemme.png') }}" /></div>
@@ -33,7 +33,7 @@
                         </div>
                         <span class="review-no">NB reviews</span>
                     </div>
-                    <p class="product-description">description produit</p>
+                    <p class="product-description">{{ $title }}</p>
                     <h4 class="price">current price: <span>{{ $price }}</span></h4>
                     <p class="vote"><strong>100%</strong> of buyers enjoyed this product! <strong>(4 votes)</strong></p>
                 
