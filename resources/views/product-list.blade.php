@@ -9,8 +9,9 @@
 
     <div class="container-fluid d-flex justify-content-center margin">
         <div class="row mt-5">
+
             @foreach ($products as $product) 
-            
+
                 <div class="col-sm-4">
                     <div class="card"> <img src="{{$product->image}}" class="card-img-top" width="100%">
                         <div class="card-body pt-0 px-0">
@@ -28,6 +29,7 @@
                     </div>
                 </div>
             @endforeach
+            
         </div>
     </div>
 
