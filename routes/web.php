@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\BackOfficeController;
 use App\Http\Controllers\CartController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ProductController;
@@ -21,3 +22,9 @@ Route::get('home', [HomeController::class, 'showHome']);
 Route::get('product', [ProductController::class, 'showListe']);
 Route::get('product/{id}',[ProductController::class, 'showProduit']);
 Route::get('cart', [CartController::class, 'showCart']);
+
+Route::get('backoffice', [BackOfficeController::class, 'index']);
+Route::post('backoffice/add', [BackOfficeController::class, 'add']);
+Route::put('backoffice/edit/{id}', [BackOfficeController::class, 'edit']);
+Route::delete('backoffice/delete/{id}', [BackOfficeController::class, 'delete']);
+
