@@ -13,7 +13,7 @@
              <p @class("card-text mt-5 mb-5")>Meilleurs site de vente de gemmes en ligne !</p>
          </div>
          <div @class('card-footer bg-dark')>
-             <a href="{{ url('/product') }}" class="btn btn-outline-dark border-warning">Voir notre boutique</a>
+             <a href="{{ url('/product') }}" class="btn btn-outline-dark border-warning rounded-pill">Voir notre boutique</a>
          </div>
      </div>
  @endsection
