@@ -34,7 +34,7 @@
                         <span class="review-no">NB reviews</span>
                     </div>
                     <p class="product-description">description produit</p>
-                    <h4 class="price">current price: <span>180 €</span></h4>
+                    <h4 class="price">current price: <span>{{ $price }}</span></h4>
                     <p class="vote"><strong>100%</strong> of buyers enjoyed this product! <strong>(4 votes)</strong></p>
                 
                     
