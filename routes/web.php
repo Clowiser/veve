@@ -25,6 +25,6 @@ Route::get('cart', [CartController::class, 'showCart']);
 
 Route::get('backoffice', [BackOfficeController::class, 'index']);
 Route::get('backoffice/add', [BackOfficeController::class, 'add']);
-Route::put('backoffice/edit/{id}', [BackOfficeController::class, 'edit']);
+Route::get('backoffice/edit/{id}', [BackOfficeController::class, 'edit']);
 Route::delete('backoffice/delete/{id}', [BackOfficeController::class, 'delete']);
 
