@@ -323,7 +323,7 @@
                 flex-grow: 1; }
       
       .product-title, .price, .sizes, .colors {
-        text-transform: UPPERCASE;
+        
         font-weight: bold; }
       
       .checked, .price span {
