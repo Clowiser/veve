@@ -13,11 +13,11 @@
                 <div class="preview col-md-6">
                     
                     <div class="preview-pic tab-content img-gemme">
-                      <div class="tab-pane active" id="pic-1"><img src="{{URL::asset('img/gemme.png') }}" /></div>
-                      <div class="tab-pane" id="pic-2"><img src="{{URL::asset('img/gemme.png') }}" /></div>
-                      <div class="tab-pane" id="pic-3"><img src="{{URL::asset('img/gemme.png') }}" /></div>
-                      <div class="tab-pane" id="pic-4"><img src="{{URL::asset('img/gemme.png') }}" /></div>
-                      <div class="tab-pane" id="pic-5"><img src="{{URL::asset('img/gemme.png') }}" /></div>
+                      <div class="tab-pane active" id="pic-1"><img src="https://i.postimg.cc/43zQJkqv/gemme-removebg-preview.png" /></div>
+                      <div class="tab-pane" id="pic-2"><img src="https://i.postimg.cc/43zQJkqv/gemme-removebg-preview.png" /></div>
+                      <div class="tab-pane" id="pic-3"><img src="https://i.postimg.cc/43zQJkqv/gemme-removebg-preview.png" /></div>
+                      <div class="tab-pane" id="pic-4"><img src="https://i.postimg.cc/43zQJkqv/gemme-removebg-preview.png" /></div>
+                      <div class="tab-pane" id="pic-5"><img src="https://i.postimg.cc/43zQJkqv/gemme-removebg-preview.png" /></div>
                     </div>
                     
                 </div>

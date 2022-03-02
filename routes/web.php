@@ -18,6 +18,6 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [HomeController::class, 'showHome']);
 Route::get('home', [HomeController::class, 'showHome']);
-Route::get('product', [ProductController::class, 'showListe']);
+Route::get('product', [ProductController::class, 'showList']);
 Route::get('product/{id}',[ProductController::class, 'showProduit']);
 Route::get('cart', [CartController::class, 'showCart']);
