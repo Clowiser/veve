@@ -2,13 +2,13 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Product;
+use App\Models\Products;
 
 class BackOfficeController extends Controller
 {
     public function index()
     {
-        $productsList = Product::all();
+        $productsList = Products::all();
         return view('index', ['products'=>$productsList]);
     }
 
@@ -24,7 +24,7 @@ class BackOfficeController extends Controller
 
     public function delete($id)
     {
-        $delete = Product::destroy($id);
+        $delete = Products::destroy($id);
         return view('index');
     }
 }
