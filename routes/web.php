@@ -24,7 +24,11 @@ Route::get('product/{id}',[ProductController::class, 'showProduit']);
 Route::get('cart', [CartController::class, 'showCart']);
 
 Route::get('backoffice', [BackOfficeController::class, 'index']);
-Route::get('backoffice/add', [BackOfficeController::class, 'add']);
-Route::get('backoffice/edit/{id}', [BackOfficeController::class, 'edit']);
-Route::delete('backoffice/delete/{id}', [BackOfficeController::class, 'delete']);
 
+Route::get('backoffice/add', [BackOfficeController::class, 'create']);
+Route::post('backoffice', [BackOfficeController::class, 'add']);
+
+Route::get('backoffice/edit/{id}', [BackOfficeController::class, 'update']);
+Route::post('backoffice/edit/{id}', [BackOfficeController::class, 'edit']);
+
+Route::get('backoffice/delete/{id}', [BackOfficeController::class, 'delete']);
