@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\DB;
-use App\Models\Product;
+use App\Models\Products;
 
 use Illuminate\Http\Request;
 
@@ -28,14 +28,14 @@ class ProductController extends Controller
     // Models
     public function showListByPriceCroiss() {
         
-        $products = Product::all()->sortByDesc('price');
+        $products = Products::all()->sortByDesc('price');
 
         return view('product-list', ['products' => $products]);
     }
 
     public function showProduit($id){
 
-        $product = Product::find($id);
+        $product = Products::find($id);
 
         return view('product-details', [
             'id' => $product->id,
