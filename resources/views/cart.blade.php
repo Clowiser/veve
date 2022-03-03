@@ -13,7 +13,7 @@ Cart
             <div class="title">
                 <div class="row">
                     <div class="col">
-                        <h4><b>Shopping Cart</b></h4>
+                        <h4><b>Panier</b></h4>
                     </div>
                     <div class="col align-self-center text-right text-muted">3 items</div>
                 </div>
@@ -37,11 +37,11 @@ Cart
 
 
             
-            <div class="back-to-shop"><a href="#">&leftarrow;</a><span class="text-muted">Back to shop</span></div>
+            <div class="back-to-shop"><a href="/product">&leftarrow;<span class=""> Continuer vos achats</span></a></div>
         </div>
         <div class="col-md-4 summary">
             <div>
-                <h5><b>Summary</b></h5>
+                <h5><b>Résumé</b></h5>
             </div>
             <hr>
             <div class="row">
@@ -49,13 +49,13 @@ Cart
                 <div class="col text-right">&euro; 4500</div>
             </div>
             <form>
-                <p>SHIPPING</p> <select>
+                <p>Livraison</p> <select>
                     <option class="text-muted">Standard-Delivery- &euro;5.00</option>
                 </select>
-                <p>GIVE CODE</p> <input id="code" placeholder="Enter your code">
+                <p>Code promo</p> <input id="code" placeholder="Enter your code">
             </form>
             <div class="row" style="border-top: 1px solid rgba(0,0,0,.1); padding: 2vh 0;">
-                <div class="col">TOTAL PRICE</div>
+                <div class="col">Prix total</div>
                 <div class="col text-right">&euro; 4505</div>
             </div> <button class="btn btn-outline-primary rounded-pill">Payer</button>
         </div>

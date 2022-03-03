@@ -85,7 +85,8 @@
     }
 
     a {
-        padding: 0 1vh
+        padding: 0 1vh;
+        text-decoration : none;
     }
 
     .close {
@@ -98,6 +99,7 @@
     }
 
     .back-to-shop {
+        
         margin-top: 4.5rem
     }
 
