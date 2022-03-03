@@ -4,6 +4,7 @@ use App\Http\Controllers\BackOfficeController;
 use App\Http\Controllers\CartController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\SessionController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -22,6 +23,18 @@ Route::get('home', [HomeController::class, 'showHome']);
 Route::get('product', [ProductController::class, 'showList']);
 Route::get('product/{id}',[ProductController::class, 'showProduit']);
 Route::get('cart', [CartController::class, 'showCart']);
+
+
+Route::get('cart/add/{id}', [CartController::class, 'addToCart']);
+Route::get('cart/update/{id}', [CartController::class, 'add']);
+Route::get('cart/undo/{id}', [CartController::class, 'undo']);
+Route::get('cart/remove/{id}',[CartController::class, 'remove']);
+
+
+Route::get('/session/set/{id}',[SessionController::class, 'storeSessionDate']);
+Route::get('/session/get',[SessionController::class, 'getSessionData']);
+Route::get('/session/remove/{id}',[SessionController::class, 'deleteSessionData']);
+
 
 Route::get('backoffice', [BackOfficeController::class, 'index']);
 Route::get('backoffice/add', [BackOfficeController::class, 'add']);

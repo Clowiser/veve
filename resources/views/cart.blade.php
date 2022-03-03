@@ -18,39 +18,25 @@ Cart
                     <div class="col align-self-center text-right text-muted">3 items</div>
                 </div>
             </div>
+
+            @foreach (session('cart') as $article)
+            
             <div class="row border-top border-bottom">
                 <div class="row main align-items-center">
-                    <div class="col-2"><img class="img-fluid" src="{{URL::asset('img/gemme.png') }}"></div>
+                    <div class="col-2"><img class="img-fluid" src="{{$article['image']}}"></div>
                     <div class="col">
-                        <div class="row text-muted">Gemme</div>
-                        <div class="row">Gemme 20%</div>
+                        <div class="row">{{$article['title']}}</div>
                     </div>
-                    <div class="col"> <a href="#">-</a><a href="#" class="border">3420</a><a href="#">+</a> </div>
-                    <div class="col">&euro; 2500 <span class="close">&#10005;</span></div>
+                    <div class="col"> <a href="{{url('cart/undo/'.$article['id'])}}">-</a><a href="#" class="border">{{$article['quantity']}}</a><a href="{{url('cart/update/'.$article['id'])}}">+</a> </div>
+                    <div class="col">{{$article['price']}} &euro;</div>
+                    <div class="col"><a href="{{url('cart/remove/'.$article['id'])}}"><span class="close">&#10005;</span></a></div>
                 </div>
             </div>
-            <div class="row">
-                <div class="row main align-items-center">
-                    <div class="col-2"><img class="img-fluid" src="{{URL::asset('img/gemme.png') }}"></div>
-                    <div class="col">
-                        <div class="row text-muted">Gemme</div>
-                        <div class="row">Gemme 10% </div>
-                    </div>
-                    <div class="col"> <a href="#">-</a><a href="#" class="border">627</a><a href="#">+</a> </div>
-                    <div class="col">&euro; 500 <span class="close">&#10005;</span></div>
-                </div>
-            </div>
-            <div class="row border-top border-bottom">
-                <div class="row main align-items-center">
-                    <div class="col-2"><img class="img-fluid" src="{{URL::asset('img/gemme.png') }}"></div>
-                    <div class="col">
-                        <div class="row text-muted">Gemme</div>
-                        <div class="row">Gemme 15%</div>
-                    </div>
-                    <div class="col"> <a href="#">-</a><a href="#" class="border">1966</a><a href="#">+</a> </div>
-                    <div class="col">&euro; 1500 <span class="close">&#10005;</span></div>
-                </div>
-            </div>
+
+            @endforeach
+
+
+            
             <div class="back-to-shop"><a href="#">&leftarrow;</a><span class="text-muted">Back to shop</span></div>
         </div>
         <div class="col-md-4 summary">
@@ -75,5 +61,6 @@ Cart
         </div>
     </div>
 </div>
+
 
 @endsection
