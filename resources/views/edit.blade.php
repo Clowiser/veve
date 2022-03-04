@@ -21,6 +21,11 @@
                     @method('PUT')
 
                     <div class="form-group">
+                        <label for="title">Nom :</label>
+                        <input type="text" class="form-control" name="title" value={{ $product->title }} placeholder="Saisir un nom">
+                    </div>
+
+                    <div class="form-group">
                         <label for="description">Description :</label>
                         <input type="text" name="description" value={{ $product->description }} id="description" class="form-control" placeholder="Saisir une description">
                     </div>
@@ -29,12 +34,7 @@
                         <label for="price">Prix :</label>
                         <input type="number" class="form-control" name="price" value={{ $product->price }} placeholder="en €">
                     </div>
-
-                    <div class="form-group">
-                        <label for="title">Nom :</label>
-                        <input type="text" class="form-control" name="title" value={{ $product->title }} placeholder="Saisir un nom">
-                    </div>
-
+                
                     <div class="form-group">
                         <label for="image">Image :</label>
                         <input type="url" class="form-control" name="image" value={{ $product->image }} placeholder="Saisir une url">

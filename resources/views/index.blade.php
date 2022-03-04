@@ -20,7 +20,10 @@
                     <div class="card">
 
                         <div class="d-flex flex-row justify-content-between px-3 mt-2">
-                            <div class="d-flex flex-row"><span class="">{{$product->title}}</span> - <span> id : {{$product->id}}</span></div>
+                            <div class="d-flex flex-row"><span class="">{{$product->title}}</span></div>
+                        </div>
+                        <div class="d-flex flex-row justify-content-between px-3 mt-2">
+                            <div class="d-flex flex-row"><span class="">{{$product->description}}</span></div>
                         </div>
                         <hr class="mt-2 mx-3">
                         <div class="card-body pt-0 px-0">
