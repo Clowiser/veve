@@ -30,7 +30,12 @@ Route::get('index', [BackOfficeController::class, 'index']);
 Route::get('index/edit/{id}', [BackOfficeController::class, 'edit']);
 Route::put('index/edit/{id}', [BackOfficeController::class, 'update']);
 
-Route::get('index/create', [BackOfficeController::class, 'create']); // Ouvre la vue d'ajout 
-Route::post('index', [BackOfficeController::class, 'store']); // Soumet le formulaire pour insérer l'enregistrement qui est un nouvel objet
+Route::get('index/create', [BackOfficeController::class, 'create']); // j'accède à la view create par sa méthode
+Route::post('index', [BackOfficeController::class, 'store']); // depuis la view create, l'objet créer dans celle-ci va être insérer
 
 Route::delete('index/delete/{id}', [BackOfficeController::class, 'destroy']);
+
+// GET pour accéder à la ressource
+// PUT pour mettre à jour une ressource
+// POST pour insérer une ressource
+// DELETE pour supprimer une ressource

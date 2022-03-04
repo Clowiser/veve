@@ -19,15 +19,16 @@
 
                     {{-- {{ csrf_field() }} --}}
                     @method('PUT')
+                    
 
                     <div class="form-group">
                         <label for="title">Nom :</label>
-                        <input type="text" class="form-control" name="title" value={{ $product->title }} placeholder="Saisir un nom">
+                        <input type="text" class="form-control" name="title" value="{{ $product->title }}" placeholder="Saisir un nom">
                     </div>
 
                     <div class="form-group">
                         <label for="description">Description :</label>
-                        <input type="text" name="description" value={{ $product->description }} id="description" class="form-control" placeholder="Saisir une description">
+                        <input type="text" name="description" value="{{ $product->description }}" id="description" class="form-control" placeholder="Saisir une description">
                     </div>
 
                     <div class="form-group">
