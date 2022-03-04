@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-use App\Models\Products;
+use App\Models\Product;
 class CartController extends Controller
 
 {
@@ -12,7 +12,7 @@ class CartController extends Controller
 
     public function addToCart($id)
     {
-        $product = Products::find($id);
+        $product = Product::find($id);
         if(!$product) {
             abort(404);
         }
@@ -51,7 +51,7 @@ class CartController extends Controller
 
     public function add($id)
     {
-      
+
         if(session()->get('cart')) {
 
             $cart = session()->get('cart');
@@ -59,13 +59,13 @@ class CartController extends Controller
             session()->put('cart', $cart);
             return redirect('/cart');
         }
-        
+
     }
     public function undo($id)
     {
-      
+
         if(session()->get('cart')) {
-            
+
             $cart = session()->get('cart');
             $cart[$id]["quantity"]--;
             session()->put('cart', $cart);
@@ -74,7 +74,7 @@ class CartController extends Controller
             }
             return redirect('/cart');
         }
-        
+
     }
     public function remove($id)
     {

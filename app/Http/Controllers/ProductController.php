@@ -2,13 +2,13 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Products;
+use App\Models\Product;
 
 class ProductController extends Controller
 {
     public function showList()
     {
-        $products = Products::all()->sortBy('price');
+        $products = Product::all()->sortBy('price');
 
         return view('product-list', ['products' => $products]);
     }
@@ -16,8 +16,8 @@ class ProductController extends Controller
     public function showProduit(int $id)
     {
 
-        $products = Products::find($id);
-        return view('product-details', ['title' => $products->title,'description' => $products->description, 'price' => $products->price, 'image' => $products->image]);
+        $product = Product::find($id);
+        return view('product-details', ['product' => $product]);
     }
 
 

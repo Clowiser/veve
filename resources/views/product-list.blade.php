@@ -21,7 +21,9 @@
                             <hr class="mt-2 mx-3">
                             <div class="d-flex flex-row justify-content-between px-3">
                                 <div class="d-flex flex-column"><span class="">{{$product->title}}</span></div>
-
+                                @foreach($product->categories as $category)
+                                    <p>{{$category}}</p>
+                                @endforeach
                             </div>
 
                             <div class="mx-3 mb-2"><a href="{{url('/cart/add/'.$product->id)}}" class="btn btn-outline-primary btn-block rounded-pill">Acheter maintenant</a></div> <a href="{{url('/product/'.$product->id)}}" class="d-flex justify-content-center text-muted">en savoir plus</a>

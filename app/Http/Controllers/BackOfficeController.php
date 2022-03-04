@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Products;
+use App\Models\Product;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 
@@ -10,7 +10,7 @@ class BackOfficeController extends Controller
 {
     public function index()
     {
-        $productsList = Products::all();
+        $productsList = Product::all();
         return view('index', ['products'=>$productsList]);
     }
 
@@ -21,7 +21,7 @@ class BackOfficeController extends Controller
 
     public function add(Request $request)
     {
-        $product = new Products();
+        $product = new Product();
         $product->title = $request->input('title');
         $product->description = $request->input('description');
         $product->price = $request->input('price');
@@ -45,13 +45,13 @@ class BackOfficeController extends Controller
 
     public function update(int $id)
     {
-        $product = Products::find($id);
+        $product = Product::find($id);
         return view('edit', [ 'product' => $product]);
     }
 
     public function edit(int $id, Request $request)
     {
-        $product = Products::find($id);
+        $product = Product::find($id);
 
         $product->title = $request->input('title');
         $product->description = $request->input('description');
@@ -76,7 +76,7 @@ class BackOfficeController extends Controller
 
     public function delete($id)
     {
-        Products::destroy($id);
+        Product::destroy($id);
         return redirect('/backoffice')->with('success','Produit supprimer avec succés.');
     }
 }
