@@ -62,10 +62,10 @@ class BackOfficeController extends Controller
         $product->image = $Request->input('image');
 
         $validator = \Validator::make($Request->all(),[
-            'title' => 'required|alpha_spaces|regex:/^[\pL\s\-]+$/u|max:255', 
-            'description' => 'required|alpha_spaces|regex:/^[\pL\s\-]+$/u|max:255',
-            'price' => 'required|entier',
-            'image' => 'required',
+            'title' => 'bail|required|alpha_spaces|regex:/^[\pL\s\-]+$/u', 
+            'description' => 'bail|required|alpha_spaces|regex:/^[\pL\s\-]+$/u',
+            'price' => 'bail|required|entier',
+            'image' => 'bail|required|url',
          ]);
 
         $product->save();

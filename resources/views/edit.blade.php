@@ -14,7 +14,7 @@
             
                 <p>Editer le produit : {{ $product->title }} - id {{ $product->id }}</p>
                 <hr>
-                <form action="" method="post">
+                <form action="" method="post"> 
                     <input type="hidden" name="_token" value="{{ csrf_token() }}">
 
                     {{-- {{ csrf_field() }} --}}
