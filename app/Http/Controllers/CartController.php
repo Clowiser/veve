@@ -65,10 +65,13 @@ class CartController extends Controller
     {
       
         if(session()->get('cart')) {
-
+            
             $cart = session()->get('cart');
             $cart[$id]["quantity"]--;
             session()->put('cart', $cart);
+            if($cart[$id]["quantity"]< 1){
+                $this->remove($id);
+            }
             return redirect('/cart');
         }
         
