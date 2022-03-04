@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Category;
 use App\Models\Product;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
@@ -16,12 +17,14 @@ class BackOfficeController extends Controller
 
     public function create()
     {
-        return view('add');
+        $categorie = Category::all();
+        return view('add', ['categorie' => $categorie]);
     }
 
     public function add(Request $request)
     {
         $product = new Product();
+
         $product->title = $request->input('title');
         $product->description = $request->input('description');
         $product->price = $request->input('price');
@@ -31,7 +34,8 @@ class BackOfficeController extends Controller
             'description' => 'bail|required',
             'price' => 'bail|required|integer|between:1,50000',
             'title' => 'bail|required|between:1,200',
-            'image' => 'bail|required|url'
+            'image' => 'bail|required|url',
+            'categorie' => 'bail|required'
         ]);
 
         if ($validator->fails()) {
@@ -46,7 +50,8 @@ class BackOfficeController extends Controller
     public function update(int $id)
     {
         $product = Product::find($id);
-        return view('edit', [ 'product' => $product]);
+        $categorie = Category::all();
+        return view('edit', [ 'product' => $product, 'categorie' => $categorie]);
     }
 
     public function edit(int $id, Request $request)
@@ -62,7 +67,7 @@ class BackOfficeController extends Controller
             'description' => 'bail|required',
             'price' => 'bail|required|integer|between:1,50000',
             'title' => 'bail|required|between:1,200',
-            'image' => 'bail|required|url'
+            'image' => 'bail|required|url',
         ]);
 
         if ($validator->fails()) {

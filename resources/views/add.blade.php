@@ -39,10 +39,16 @@
                             <div class="invalid-feedback">{{ $message }}</div>
                             @enderror
                         </div>
-{{--                        <div class="form-group">--}}
-{{--                            <label for="categorie">Categorie du produit:</label>--}}
-{{--                            <select required class="form-control" name="categorie" placeholder="Choisir une catégorie"></select>--}}
-{{--                        </div>--}}
+                        <p>Catégories :</p>
+                        <div @class("d-flex flex-row")>
+                            @foreach($categorie as $category)
+                                <label for="categorie">{{$category->name}}</label>
+                                <input type="checkbox" class="form-control @error('categorie') is-invalid @enderror" name="categorie" checked>
+                            @endforeach
+                            @error('categorie')
+                            <div class="invalid-feedback">{{ $message }}</div>
+                            @enderror
+                        </div>
                         <div class="mx-3 mb-2"><button @class("btn btn-outline-primary btn-block rounded-pill")>Ajouter le produit</button></div>
                     </form>
                 </div>
