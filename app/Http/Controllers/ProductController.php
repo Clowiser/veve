@@ -10,7 +10,6 @@ class ProductController extends Controller
     {
         $products = Products::all()->sortBy('price');
 
-
         return view('product-list', ['products' => $products]);
     }
 
@@ -20,4 +19,6 @@ class ProductController extends Controller
         $products = Products::find($id);
         return view('product-details', ['title' => $products->title,'description' => $products->description, 'price' => $products->price, 'image' => $products->image]);
     }
+
+
 }

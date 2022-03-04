@@ -5,18 +5,17 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Products extends Model
+class Categories extends Model
 {
-   protected $product;
+    use HasFactory;
+
+    protected $categorie;
 
     protected $primaryKey = 'id';
     public $incrementing = true;
 
     protected $fillable = [
-        'price' => 'required',
-        'description' => 'required',
-        'image' => 'required',
-        'title' => 'required',
+        'name' => 'required',
     ];
 
 

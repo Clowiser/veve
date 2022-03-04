@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Products;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Validator;
 
 class BackOfficeController extends Controller
 {
@@ -26,6 +27,17 @@ class BackOfficeController extends Controller
         $product->price = $request->input('price');
         $product->image = $request->input('image');
 
+        $validator = Validator::make($request->all(),[
+            'description' => 'bail|required',
+            'price' => 'bail|required|integer|between:1,50000',
+            'title' => 'bail|required|between:1,200',
+            'image' => 'bail|required|url'
+        ]);
+
+        if ($validator->fails()) {
+            return back()->withErrors($validator)->withInput();
+        }
+
         $product->save();
 
         return redirect('/backoffice')->with('success','Produit ajouter avec succés.');
@@ -40,10 +52,22 @@ class BackOfficeController extends Controller
     public function edit(int $id, Request $request)
     {
         $product = Products::find($id);
+
         $product->title = $request->input('title');
         $product->description = $request->input('description');
         $product->price = $request->input('price');
         $product->image = $request->input('image');
+
+        $validator = Validator::make($request->all(),[
+            'description' => 'bail|required',
+            'price' => 'bail|required|integer|between:1,50000',
+            'title' => 'bail|required|between:1,200',
+            'image' => 'bail|required|url'
+        ]);
+
+        if ($validator->fails()) {
+            return back()->withErrors($validator)->withInput();
+        }
 
         $product->save();
 
