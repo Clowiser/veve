@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Http\Validator;
 use Illuminate\Support\Facades\DB;
 use App\Models\Products;
 
@@ -17,6 +18,8 @@ class BackOfficeController extends Controller
         return view('index', ['products' => $products]);
     }
     //permet d'afficher une liste d'une ressource => la liste des produits
+
+
 
 
     public function create()
@@ -36,9 +39,10 @@ class BackOfficeController extends Controller
 
         $product->save(); // on enregistre
  
-        return redirect('/index'); // on redirect à notre page principale
+        return redirect('index'); // on redirect à notre page principale
     }
     //permet, après l'action create, d'enregistrer la nouvelle ressource
+
 
 
     public function edit($id)
@@ -49,19 +53,30 @@ class BackOfficeController extends Controller
     //permet d'afficher le formulaire ou éditer(modifier) une ressource spécicifiée
 
 
-    public function update($id, $Request){
+    public function update(Request $Request, $id){
 
         $product = Products::find($id);
-
         $product->title = $Request->input('title');
         $product->price = $Request->input('price');
+        $product->description = $Request->input('description');
+        $product->image = $Request->input('image');
+
+        $validator = \Validator::make($Request->all(),[
+            'title' => 'required',
+            'price' => 'required', 
+            'description' => 'required',
+            'image' => 'required',
+         ]);
 
         $product->save();
 
         return redirect('index');
     }
+    //permet de mettre à jour la ressource spécifiée
   
 
+
+    
     public function destroy($id)
     {
         $product = Products::destroy($id);

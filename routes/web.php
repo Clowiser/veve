@@ -27,10 +27,10 @@ Route::get('cart', [CartController::class, 'showCart']);
 //BackOffice
 Route::get('index', [BackOfficeController::class, 'index']);
 
+Route::get('index/edit/{id}', [BackOfficeController::class, 'edit']);
+Route::put('index/edit/{id}', [BackOfficeController::class, 'update']);
+
 Route::delete('index/delete/{id}', [BackOfficeController::class, 'destroy']);
 
 Route::get('index/create', [BackOfficeController::class, 'create']); // Ouvre la vue d'ajout 
-Route::post('index', [BackOfficeController::class, 'store']); // Soumet le formulaire pour insérer l'enregistrement
-
-Route::get('index/edit/{id}', [BackOfficeController::class, 'edit']);
-Route::put('index/{id}', [BackOfficeController::class, 'update']);
+Route::post('index', [BackOfficeController::class, 'store']); // Soumet le formulaire pour insérer l'enregistrement qui est un nouvel objet
