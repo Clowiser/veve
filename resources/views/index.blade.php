@@ -7,7 +7,7 @@
 @section('contenu')
 
     <h5>Ajouter un article</h5>
-    <a href="{{url('index/add')}}" class="btn btn-primary btn-sm bg-primary rounded-pill">Add</a>
+    <a href="{{url('index/create')}}" class="btn btn-primary btn-sm bg-primary rounded-pill">Add</a>
 
 
     <div class="container-fluid d-flex justify-content-center margin">
