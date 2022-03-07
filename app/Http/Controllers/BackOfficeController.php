@@ -23,6 +23,17 @@ class BackOfficeController extends Controller
 
     public function add(Request $request)
     {
+        $validator = Validator::make($request->all(),[
+            'description' => 'bail|required',
+            'price' => 'bail|required|integer|between:1,50000',
+            'title' => 'bail|required|between:1,200',
+            'image' => 'bail|required|url',
+        ]);
+
+        if ($validator->fails()) {
+            return back()->withErrors($validator)->withInput();
+        }
+
         $product = new Product();
 
         $product->title = $request->input('title');
@@ -30,19 +41,17 @@ class BackOfficeController extends Controller
         $product->price = $request->input('price');
         $product->image = $request->input('image');
 
-        $validator = Validator::make($request->all(),[
-            'description' => 'bail|required',
-            'price' => 'bail|required|integer|between:1,50000',
-            'title' => 'bail|required|between:1,200',
-            'image' => 'bail|required|url',
-            'categorie' => 'bail|required'
-        ]);
+        $product->save();
 
-        if ($validator->fails()) {
-            return back()->withErrors($validator)->withInput();
+//        dd($product);
+        $category = $request->request->all();
+
+        $cat = [];
+        foreach ($category['category'] as $category){
+            $cat[] = $category;
         }
 
-        $product->save();
+        $product->categories()->attach($cat);
 
         return redirect('/backoffice')->with('success','Produit ajouter avec succés.');
     }
@@ -56,6 +65,17 @@ class BackOfficeController extends Controller
 
     public function edit(int $id, Request $request)
     {
+        $validator = Validator::make($request->all(),[
+            'description' => 'bail|required',
+            'price' => 'bail|required|integer|between:1,50000',
+            'title' => 'bail|required|between:1,200',
+            'image' => 'bail|required|url',
+        ]);
+
+        if ($validator->fails()) {
+            return back()->withErrors($validator)->withInput();
+        }
+
         $product = Product::find($id);
         $category = $request->request->all();
 
@@ -70,17 +90,6 @@ class BackOfficeController extends Controller
         $product->price = $request->input('price');
         $product->image = $request->input('image');
 
-        $validator = Validator::make($request->all(),[
-            'description' => 'bail|required',
-            'price' => 'bail|required|integer|between:1,50000',
-            'title' => 'bail|required|between:1,200',
-            'image' => 'bail|required|url',
-        ]);
-
-        if ($validator->fails()) {
-            return back()->withErrors($validator)->withInput();
-        }
-
         $product->save();
 
         return redirect('/backoffice')->with('success','Produit editer avec succés.');
@@ -88,7 +97,10 @@ class BackOfficeController extends Controller
 
     public function delete($id)
     {
-        Product::destroy($id);
+        $product = Product::find($id);
+        $product->categories()->detach();
+        $product->delete();
+
         return redirect('/backoffice')->with('success','Produit supprimer avec succés.');
     }
 }

@@ -43,7 +43,7 @@
                         <div @class("d-flex flex-row")>
                             @foreach($categorie as $category)
                                 <label for="categorie">{{$category->name}}</label>
-                                <input type="checkbox" class="form-control @error('categorie') is-invalid @enderror" name="categorie" checked>
+                                <input type="checkbox" class="w-25 @error('categorie') is-invalid @enderror" name="category[]" value="{{$category->id}}">
                             @endforeach
                             @error('categorie')
                             <div class="invalid-feedback">{{ $message }}</div>
