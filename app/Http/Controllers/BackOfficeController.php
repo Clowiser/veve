@@ -57,7 +57,14 @@ class BackOfficeController extends Controller
     public function edit(int $id, Request $request)
     {
         $product = Product::find($id);
+        $category = $request->request->all();
 
+        $cat = [];
+        foreach ($category['category'] as $category){
+            $cat[] = $category;
+        }
+
+        $product->categories()->sync($cat);
         $product->title = $request->input('title');
         $product->description = $request->input('description');
         $product->price = $request->input('price');
