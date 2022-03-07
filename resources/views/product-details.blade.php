@@ -34,6 +34,7 @@
                         <span class="review-no">NB reviews</span>
                     </div>
                     <p class="product-description">{{$description}}</p>
+                    <p class="product-description">Categorie : {{$category_id}}</p>
                     <h4 class="price">Prix : <span>{{$price}}€</span></h4>
                     <p class="vote"><strong>100%</strong> De clients satisfaits <strong>(4 votes)</strong></p>
                 

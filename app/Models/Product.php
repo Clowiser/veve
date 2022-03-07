@@ -7,7 +7,14 @@ use Illuminate\Database\Eloquent\Model;
 
 // class au singulier !!
 
-class Products extends Model
+class Product extends Model
 {
    protected $table = "products";
+
+   //ici, on fait la relation entre Product Category
+   public function category()
+   {
+      return $this->belongsTo(Category::class);
+   }
+
 }

@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Http\Validator;
 use Illuminate\Support\Facades\DB;
-use App\Models\Products;
+use App\Models\Product;
 
 // Request : la requête HTTP 
 
@@ -14,7 +14,7 @@ class BackOfficeController extends Controller
 
     public function index()
     {
-        $products = Products::all()->sortby('price');
+        $products = Product::all()->sortby('price');
         return view('index', ['products' => $products]);
     }
     //permet d'afficher une liste d'une ressource => la liste des produits
@@ -31,7 +31,7 @@ class BackOfficeController extends Controller
 
     public function store(Request $Request){
 
-        $product = new Products(); // On créait notre nouvel objet (sera enregistré dans ce dernier)
+        $product = new Product(); // On créait notre nouvel objet (sera enregistré dans ce dernier)
         $product->description = $Request->input('description'); // on requête les éléments voulus
         $product->title = $Request->input('title');
         $product->image = $Request->input('image');
@@ -47,7 +47,7 @@ class BackOfficeController extends Controller
 
     public function edit($id)
     {
-        $product = Products::find($id);
+        $product = Product::find($id);
         return view('edit', ['product' => $product]);
     }
     //permet d'afficher le formulaire ou éditer(modifier) une ressource spécicifiée
@@ -55,7 +55,7 @@ class BackOfficeController extends Controller
 
     public function update(Request $Request, $id){
 
-        $product = Products::find($id);
+        $product = Product::find($id);
         $product->title = $Request->input('title');
         $product->price = $Request->input('price');
         $product->description = $Request->input('description');
@@ -79,7 +79,7 @@ class BackOfficeController extends Controller
     
     public function destroy($id)
     {
-        $product = Products::destroy($id);
+        $product = Product::destroy($id);
         return redirect('index');
     }
     //permet de supprimer une ressource spécifiée => donc par son index + une fois la ressource détruite, on retourne à l'index
