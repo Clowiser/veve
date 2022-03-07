@@ -32,15 +32,29 @@ class BackOfficeController extends Controller
 
     public function store(Request $Request){
 
-        $product = new Product(); // On créait notre nouvel objet (sera enregistré dans ce dernier)
+        $product = new Product(); // On créé notre nouvel objet (sera enregistré dans ce dernier)
         $product->description = $Request->input('description'); // on requête les éléments voulus
         $product->title = $Request->input('title');
         $product->image = $Request->input('image');
         $product->price = $Request->input('price');
+        $product->category_id = $Request->input('category_id');
+
+        $validator = \Validator::make($Request->all(),[ //on effectue une validation des élements
+            'title' => 'bail|required',
+            'description' => 'bail|required',
+            'price' => 'bail|required|integer',
+            'image' => 'bail|required|url',
+            'category_id' => 'bail|required|integer',
+         ]);
+
+        if($validator->fails()){ //si les données ne sont pas bonnes
+            return back()->withErrors($validator)->withInput(); //retour sur la view create
+        };
 
         $product->save(); // on enregistre
- 
-        return redirect('index'); // on redirect à notre page principale
+
+        return redirect('index')->with('success', 'Votre formulaire a été soumis.');
+        // on redirect à notre page principale
     }
     //permet, après l'action create, d'enregistrer la nouvelle ressource
 
@@ -70,16 +84,20 @@ class BackOfficeController extends Controller
         $product->category_id = $Request->input('category_id');
 
         $validator = \Validator::make($Request->all(),[
-            'title' => 'bail|required|alpha_spaces|regex:/^[\pL\s\-]+$/u', 
-            'description' => 'bail|required|alpha_spaces|regex:/^[\pL\s\-]+$/u',
-            'price' => 'bail|required|entier',
+            'title' => 'bail|required|', 
+            'description' => 'bail|required|',
+            'price' => 'bail|required|integer',
             'image' => 'bail|required|url',
-            'category_id' => 'bail|required|entier',
+            'category_id' => 'bail|required|integer',
          ]);
+
+         if($validator->fails()){
+            return back()->withErrors($validator)->withInput();
+        };
 
         $product->save();
 
-        return redirect('index');
+        return redirect('index')->with('success', 'Votre formulaire a été soumis.');
     }
     //permet de mettre à jour la ressource spécifiée
   

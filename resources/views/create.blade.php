@@ -33,6 +33,22 @@ Ajouter un article
                     </div>
 
                     <div class="form-group">
+                        <label for="category_id">Categorie :</label>
+                        <input type="number" class="form-control" name="category_id" placeholder="">
+                    </div>
+
+                    {{-- <div class="form-group">
+                        <label for="category_id">Categorie : </label>
+                        <select class="form-control" name="category_id">
+                            @foreach ($category as $key => $value) 
+                            {
+                            <option value="{{ $key }}">{{ $key }}</option>
+                            }
+                            @endforeach
+                        </select>
+                    </div> --}}
+
+                    <div class="form-group">
                         <label for="image">Image :</label>
                         <input type="url" class="form-control" name="image" placeholder="Saisir une url">
                     </div>
@@ -43,6 +59,12 @@ Ajouter un article
             </div>
         </div>
     </div>
+</div>
+
+<div class="container-fluid d-flex justify-content-center">
+@if($errors->any())
+{{ implode('', $errors->all(':message  ')) }}
+@endif
 </div>
 
 @endsection

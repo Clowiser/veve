@@ -10,8 +10,11 @@ class ProductController extends Controller
 {
     public function showList()
     {
+        // $products = Product::all()->sortBy('price');      
+        // return view('product-list', ['products' => $products]);
+
         $products = Product::all()->sortBy('price');      
-        return view('product-list', ['products' => $products]);
+        return view('product-list', compact('products'));
     }
 
     public function showProduit(int $id)
