@@ -37,10 +37,14 @@
                     <h4 class="price">Prix : <span>{{$product->price}}€</span></h4>
                     <p class="vote"><strong>100%</strong> De clients satisfaits <strong>(4 votes)</strong></p>
 
+                    @foreach($product->categories as $category)
+                    <p>{{$category->name}}</p>
+                @endforeach
+
 
                     <div class="action">
                         <a href="{{url('/product')}}" class="add-to-cart btn btn-dark rounded-pill"> ajouter au panier </a>
-                        <a href="{{url('/cart')}}" class="add-to-cart btn btn-default rounded-pill"> acheter maintenant </a>
+                        <a href="{{url('cart/add/'.$product->id)}}" class="add-to-cart btn btn-default rounded-pill"> acheter maintenant </a>
                     </div>
                 </div>
             </div>

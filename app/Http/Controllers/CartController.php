@@ -2,12 +2,15 @@
 
 namespace App\Http\Controllers;
 use App\Models\Product;
+use App\Models\Cart;
 class CartController extends Controller
 
 {
     public function showCart()
     {
-        return view('cart');
+        $cart = Cart::find(1);
+
+        return view('cart', ['cart'=>$cart]);
     }
 
     public function addToCart($id)

@@ -19,17 +19,17 @@ Cart
                 </div>
             </div>
 
-            @foreach (session('cart') as $article)
+            @foreach ($cart->products as $product)
             
             <div class="row border-top border-bottom">
                 <div class="row main align-items-center">
-                    <div class="col-2"><img class="img-fluid" src="{{$article['image']}}"></div>
+                    <div class="col-2"><img class="img-fluid" src="{{$product['image']}}"></div>
                     <div class="col">
-                        <div class="row">{{$article['title']}}</div>
+                        <div class="row">{{$product['title']}}</div>
                     </div>
-                    <div class="col"> <a href="{{url('cart/undo/'.$article['id'])}}">-</a><a href="#" class="border">{{$article['quantity']}}</a><a href="{{url('cart/update/'.$article['id'])}}">+</a> </div>
-                    <div class="col">{{$article['price']}} &euro;</div>
-                    <div class="col"><a href="{{url('cart/remove/'.$article['id'])}}"><span class="close">&#10005;</span></a></div>
+                    <div class="col"> <a href="{{url('cart/undo/'.$product['id'])}}">-</a><a href="#" class="border">{{$product['quantity']}}</a><a href="{{url('cart/update/'.$product['id'])}}">+</a> </div>
+                    <div class="col">{{$product['price']}} &euro;</div>
+                    <div class="col"><a href="{{url('cart/remove/'.$product['id'])}}"><span class="close">&#10005;</span></a></div>
                 </div>
             </div>
 
