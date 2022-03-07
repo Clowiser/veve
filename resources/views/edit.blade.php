@@ -37,7 +37,7 @@
                     </div>
 
                     <div class="form-group">
-                        <label for="category_id">Categorie :</label>
+                        <label for="category_id">Categorie : </label>
 
                         <select class="form-control" name="category_id">
                             <option value="">{{ $product->category_id }}</option>
@@ -56,7 +56,7 @@
                     </div>
 
                     {{-- <div class="mt-3 mx-0"><button @class("btn btn-warning bg-warning rounded-pill mt-3")>Edit</button></div> --}}
-                    <input class="btn btn-success bg-success rounded-pill mt-3" type="submit" value="Edit" />
+                    <input class="btn btn-success bg-success rounded-pill mt-3" type="submit" value="Save" />
             
                 </form>
 
