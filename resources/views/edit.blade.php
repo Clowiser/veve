@@ -35,7 +35,21 @@
                         <label for="price">Prix :</label>
                         <input type="number" class="form-control" name="price" value={{ $product->price }} placeholder="en €">
                     </div>
-                
+
+                    <div class="form-group">
+                        <label for="category_id">Categorie :</label>
+
+                        <select class="form-control" name="category_id">
+                            <option value="">{{ $product->category_id }}</option>
+
+                            @foreach ($category as $key => $value) 
+                            {
+                            <option value="{{ $key }}">{{ $key }}</option>
+                            }
+                            @endforeach
+                        </select>
+                    </div>
+
                     <div class="form-group">
                         <label for="image">Image :</label>
                         <input type="url" class="form-control" name="image" value={{ $product->image }} placeholder="Saisir une url">

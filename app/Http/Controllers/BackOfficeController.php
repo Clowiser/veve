@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Http\Validator;
 use Illuminate\Support\Facades\DB;
 use App\Models\Product;
+use App\Models\Category;
 
 // Request : la requête HTTP 
 
@@ -47,8 +48,14 @@ class BackOfficeController extends Controller
 
     public function edit($id)
     {
+        // $product = Product::find($id);
+        // return view('edit', ['product' => $product]);
+        
         $product = Product::find($id);
-        return view('edit', ['product' => $product]);
+        $category = Category::pluck('name', 'id'); 
+        // dd($category);
+        //récupérer la liste que l'on va envoyer au select donc on le rajoute au compact
+        return view('edit', compact('product', 'category'));
     }
     //permet d'afficher le formulaire ou éditer(modifier) une ressource spécicifiée
 
@@ -60,12 +67,14 @@ class BackOfficeController extends Controller
         $product->price = $Request->input('price');
         $product->description = $Request->input('description');
         $product->image = $Request->input('image');
+        $product->category_id = $Request->input('category_id');
 
         $validator = \Validator::make($Request->all(),[
             'title' => 'bail|required|alpha_spaces|regex:/^[\pL\s\-]+$/u', 
             'description' => 'bail|required|alpha_spaces|regex:/^[\pL\s\-]+$/u',
             'price' => 'bail|required|entier',
             'image' => 'bail|required|url',
+            'category_id' => 'bail|required|entier',
          ]);
 
         $product->save();

@@ -23,10 +23,6 @@ class CreateProductsTable extends Migration
             $table->String('title');
 
         });
-
-        // Schema::table('categories', function (Blueprint $table) {
-        //     $table->integer('product_id')->unsigned()->index();
-        // });
     }
 
     /**
