@@ -11,7 +11,8 @@ class BackOfficeController extends Controller
 {
     public function index()
     {
-        $productsList = Product::all();
+        //first() = du premier au dernier .... latest() = du dernier au premier
+        $productsList = Product::first()->paginate(5);
         return view('index', ['products'=>$productsList]);
     }
 

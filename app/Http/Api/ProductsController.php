@@ -5,7 +5,7 @@ namespace App\Http\Api;
 use App\Models\Product;
 use Illuminate\Http\Request;
 
-class ProductController
+class ProductsController
 {
     public function index()
     {

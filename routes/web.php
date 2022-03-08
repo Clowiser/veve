@@ -5,6 +5,7 @@ use App\Http\Controllers\CartController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\SessionController;
+use App\Http\Api\ProductsController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -45,3 +46,6 @@ Route::get('backoffice/edit/{id}', [BackOfficeController::class, 'update']);
 Route::post('backoffice/edit/{id}', [BackOfficeController::class, 'edit']);
 
 Route::get('backoffice/delete/{id}', [BackOfficeController::class, 'delete']);
+
+Route::get('products', [ProductsController::class, 'index']);
+Route::get('product/{id}', [ProductsController::class, 'show']);

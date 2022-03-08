@@ -99,7 +99,7 @@
     }
 
     .back-to-shop {
-        
+
         margin-top: 4.5rem
     }
 
@@ -414,3 +414,15 @@
 .margin-cart{
     margin-bottom: 4.6%;
 }
+
+/* CSS PAGINATION BACKOFFICE INDEX */
+
+    .page-link{
+        color: black;
+    }
+
+    .page-item.active .page-link{
+        color: #ffc107!important;
+        background-color: black;
+        border-color: white;
+    }
