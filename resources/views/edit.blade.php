@@ -13,8 +13,8 @@
                         {{ csrf_field() }}
                         <div class="form-group">
                             <label for="description">Description :</label>
-                            <input value="{{$product->description}}" type="text" name="description" id="description" class="form-control @error('description') is-invalid @enderror" rows="8" cols="80" placeholder="Saisir une description">
-                            @error('nom')
+                            <textarea name="description" id="description" class="form-control @error('description') is-invalid @enderror" rows="8" cols="80" placeholder="Saisir une description">{{$product->description}}</textarea>
+                            @error('description')
                             <div class="invalid-feedback">{{ $message }}</div>
                             @enderror
                         </div>
@@ -49,8 +49,9 @@
                             <div class="invalid-feedback">{{ $message }}</div>
                             @enderror
                         </div>
-                        <br><div class="mx-3 mb-2"><button @class("btn btn-outline-primary btn-block rounded-pill")>Modifier le produit</button></div><br>
+                        <br><div class="mx-3 mb-2"><button @class("w-25 btn btn-outline-primary btn-block rounded-pill")>Modifier le produit</button></div><br>
                     </form>
+                    <div class="mx-3 mb-2"><a href="{{url('backoffice')}}" @class("w-25 btn btn-outline-primary rounded-pill")>Retour</a></div>
                 </div>
             </div>
         </div>

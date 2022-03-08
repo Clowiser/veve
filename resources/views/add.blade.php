@@ -49,8 +49,9 @@
                             <div class="invalid-feedback">{{ $message }}</div>
                             @enderror
                         </div>
-                        <div class="mx-3 mb-2"><button @class("btn btn-outline-primary btn-block rounded-pill")>Ajouter le produit</button></div>
+                        <div class="mx-3 mb-2"><button @class("w-25 btn btn-outline-primary rounded-pill")>Ajouter le produit</button></div>
                     </form>
+                    <div class="mx-3 mb-2"><a href="{{url('backoffice')}}" @class("w-25 btn btn-outline-primary rounded-pill")>Retour</a></div>
                 </div>
             </div>
         </div>
