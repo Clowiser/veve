@@ -58,9 +58,12 @@ class BackOfficeController extends Controller
 
     public function update(int $id)
     {
+        $productCat = [];
         $product = Product::find($id);
+        $productCat = $product->categories->pluck('id')->toArray();
         $categorie = Category::all();
-        return view('edit', [ 'product' => $product, 'categorie' => $categorie]);
+
+        return view('edit', [ 'product' => $product, 'categorie' => $categorie, 'productCat' => $productCat]);
     }
 
     public function edit(int $id, Request $request)
