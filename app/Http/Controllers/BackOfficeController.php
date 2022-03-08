@@ -32,13 +32,6 @@ class BackOfficeController extends Controller
 
     public function store(Request $Request){
 
-        $product = new Product(); // On créé notre nouvel objet (sera enregistré dans ce dernier)
-        $product->description = $Request->input('description'); // on requête les éléments voulus
-        $product->title = $Request->input('title');
-        $product->image = $Request->input('image');
-        $product->price = $Request->input('price');
-        $product->category_id = $Request->input('category_id');
-
         $validator = \Validator::make($Request->all(),[ //on effectue une validation des élements
             'title' => 'bail|required',
             'description' => 'bail|required',
@@ -50,6 +43,13 @@ class BackOfficeController extends Controller
         if($validator->fails()){ //si les données ne sont pas bonnes
             return back()->withErrors($validator)->withInput(); //retour sur la view create
         };
+
+        $product = new Product(); // On créé notre nouvel objet (sera enregistré dans ce dernier)
+        $product->description = $Request->input('description'); // on requête les éléments voulus
+        $product->title = $Request->input('title');
+        $product->image = $Request->input('image');
+        $product->price = $Request->input('price');
+        $product->category_id = $Request->input('category_id');
 
         $product->save(); // on enregistre
 
@@ -76,13 +76,6 @@ class BackOfficeController extends Controller
 
     public function update(Request $Request, $id){
 
-        $product = Product::find($id);
-        $product->title = $Request->input('title');
-        $product->price = $Request->input('price');
-        $product->description = $Request->input('description');
-        $product->image = $Request->input('image');
-        $product->category_id = $Request->input('category_id');
-
         $validator = \Validator::make($Request->all(),[
             'title' => 'bail|required|', 
             'description' => 'bail|required|',
@@ -94,6 +87,13 @@ class BackOfficeController extends Controller
          if($validator->fails()){
             return back()->withErrors($validator)->withInput();
         };
+
+        $product = Product::find($id);
+        $product->title = $Request->input('title');
+        $product->price = $Request->input('price');
+        $product->description = $Request->input('description');
+        $product->image = $Request->input('image');
+        $product->category_id = $Request->input('category_id');
 
         $product->save();
 

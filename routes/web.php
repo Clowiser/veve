@@ -25,17 +25,21 @@ Route::get('cart', [CartController::class, 'showCart']);
 
 
 //BackOffice
-Route::get('index', [BackOfficeController::class, 'index']);
+//page accueil
+Route::get('index', [BackOfficeController::class, 'index']); // get : j'accède à la ressource index
 
-Route::get('index/edit/{id}', [BackOfficeController::class, 'edit']);
-Route::put('index/edit/{id}', [BackOfficeController::class, 'update']);
+//editer un produit
+Route::get('index/edit/{id}', [BackOfficeController::class, 'edit']); // get : j'accède à la ressource edit id
+Route::put('index/edit/{id}', [BackOfficeController::class, 'update']); //put : je met à jour la ressource 
 
-Route::get('index/create', [BackOfficeController::class, 'create']); // j'accède à la view create par sa méthode
-Route::post('index', [BackOfficeController::class, 'store']); // depuis la view create, l'objet créer dans celle-ci va être insérer
+//créer un produit
+Route::get('index/create', [BackOfficeController::class, 'create']); // get : j'accède à la view create
+Route::post('index', [BackOfficeController::class, 'store']); // post : soumission de formulaire : ajoute une ressource
 
-Route::delete('index/delete/{id}', [BackOfficeController::class, 'destroy']);
+//supprimer un produit
+Route::delete('index/delete/{id}', [BackOfficeController::class, 'destroy']); // je supprime la ressource à l'id indiqué
 
-// GET pour accéder à la ressource
+// GET pour accéder à la ressource 
 // PUT pour mettre à jour une ressource
-// POST pour insérer une ressource
+// POST pour insérer une ressource + requête au serveur qui renvoie la ressource concernée 
 // DELETE pour supprimer une ressource

@@ -33,20 +33,13 @@ Ajouter un article
                     </div>
 
                     <div class="form-group">
-                        <label for="category_id">Categorie :</label>
-                        <input type="number" class="form-control" name="category_id" placeholder="">
-                    </div>
-
-                    {{-- <div class="form-group">
                         <label for="category_id">Categorie : </label>
                         <select class="form-control" name="category_id">
-                            @foreach ($category as $key => $value) 
-                            {
-                            <option value="{{ $key }}">{{ $key }}</option>
-                            }
-                            @endforeach
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
                         </select>
-                    </div> --}}
+                    </div>
 
                     <div class="form-group">
                         <label for="image">Image :</label>
