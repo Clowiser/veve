@@ -4,23 +4,16 @@ use App\Http\Controllers\CartController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\BackOfficeController;
+
+use App\Http\Api\ProductsController;
+
 use Illuminate\Support\Facades\Route;
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
-*/
 
-Route::get('/', [HomeController::class, 'showHome']);
+Route::get('/', [HomeController::class, 'showHome'])->name('home');
 Route::get('home', [HomeController::class, 'showHome']);
 Route::get('product', [ProductController::class, 'showList']);
-Route::get('product/{id}',[ProductController::class, 'showProduit']);
+Route::get('product/{id}',[ProductController::class, 'showProduct']);
 Route::get('cart', [CartController::class, 'showCart']);
 
 
@@ -43,3 +36,6 @@ Route::delete('index/delete/{id}', [BackOfficeController::class, 'destroy']); //
 // PUT pour mettre à jour une ressource
 // POST pour insérer une ressource + requête au serveur qui renvoie la ressource concernée 
 // DELETE pour supprimer une ressource
+
+Route::get('products', [ProductsController::class, 'showListApi']);
+Route::get('product/{id}', [ProductsController::class, 'showProductApi']);

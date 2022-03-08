@@ -8,6 +8,8 @@ use App\Models\Product;
 
 class ProductController extends Controller
 {
+
+    //Controller
     public function showList()
     {
         // $products = Product::all()->sortBy('price');      
@@ -17,11 +19,10 @@ class ProductController extends Controller
         return view('product-list', compact('products'));
     }
 
-    public function showProduit(int $id)
+    public function showProduct(int $id)
     {
         $products = Product::find($id);
         return view('product-details', ['title' => $products->title,'description' => $products->description, 'price' => $products->price, 'image' => $products->image, 'category_id' => $products->category_id]);
     }
 
-    
 }

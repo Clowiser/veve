@@ -10,6 +10,7 @@ use Illuminate\Database\Eloquent\Model;
 class Product extends Model
 {
    protected $table = "products";
+   protected $fillable = ['donnees'];
 
    //ici, on fait la relation entre Product Category
    public function category()
