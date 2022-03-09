@@ -8,6 +8,7 @@
 <div @class('container')>
     <a href="{{url('/backoffice/add')}}" @class('btn btn-outline-success bg-success w-25 rounded-pill mb-5 mt-5')>Ajouter un produit</a>
     <a href="{{url('/home')}}" @class('btn btn-outline-dark w-25 rounded-pill mb-5 mt-5')>Accueil</a>
+
     <table class="table">
         <thead>
         <tr>
@@ -39,5 +40,6 @@
     <div class="d-flex justify-content-center">
         {!! $products->links() !!}
     </div>
+
 </div>
 @endsection
