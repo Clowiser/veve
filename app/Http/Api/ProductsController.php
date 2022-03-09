@@ -56,7 +56,7 @@ class ProductsController
         ]);
     }
 
-    public function delete($id, Request $request)
+    public function delete($id)
     {
         $product = Product::findOrFail($id);
         $product->delete();
