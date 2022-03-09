@@ -1,14 +1,6 @@
 <?php
 
-use App\Http\Controllers\BackOfficeController;
-use App\Http\Controllers\CartController;
-use App\Http\Controllers\HomeController;
-use App\Http\Controllers\ProductController;
-use App\Http\Controllers\SessionController;
-use App\Http\Api\ProductsController;
 use Illuminate\Support\Facades\Route;
-
-
 
 /*
 |--------------------------------------------------------------------------
@@ -32,7 +24,7 @@ Route::get('/dashboard', function () {
 })->middleware(['auth'])->name('dashboard');
 
 Route::group(['middleware' => ['auth']], function () {
-    
+
     Route::get('backoffice', [BackOfficeController::class, 'index']);
 
     Route::get('backoffice/add', [BackOfficeController::class, 'create']);
