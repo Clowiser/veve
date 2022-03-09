@@ -1,5 +1,11 @@
 <?php
 
+use App\Http\Api\ProductsController;
+use App\Http\Controllers\BackOfficeController;
+use App\Http\Controllers\CartController;
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\ProductController;
+use App\Http\Controllers\SessionController;
 use Illuminate\Support\Facades\Route;
 
 /*
