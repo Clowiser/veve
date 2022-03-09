@@ -15,6 +15,9 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
+//MIP API REST
+//Postman
+
 //Base - afficher la liste des produits & un produit
 Route::get('products', [ProductsController::class, 'showListApi']);
 Route::get('product/{id}', [ProductsController::class, 'showProductApi']);
@@ -28,6 +31,7 @@ Route::delete('product/{id}', [ProductsController::class, 'destroy']);
 //Créer un produit
 Route::post('products', [ProductsController::class, 'create']);
 
+
 //Authentification API
-Route::post('inscription', [AuthController::class, 'SignUpUser']);
-Route::post('connexion', [AuthController::class, 'connexion']);
+Route::post('inscription', [AuthController::class, 'SignUp']);
+Route::post('connexion', [AuthController::class, 'SignIn']);
