@@ -54,6 +54,3 @@ Route::get('cart/add/{id}', [CartController::class, 'addToCart']);
 Route::get('cart/update/{id}', [CartController::class, 'add']);
 Route::get('cart/undo/{id}', [CartController::class, 'undo']);
 Route::get('cart/remove/{id}',[CartController::class, 'remove']);
-
-Route::get('products', [ProductsController::class, 'index']);
-Route::get('product/{id}', [ProductsController::class, 'show']);
