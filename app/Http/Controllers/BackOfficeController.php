@@ -88,6 +88,8 @@ class BackOfficeController extends Controller
             return back()->withErrors($validator)->withInput();
         };
 
+        //problème avec la category_id
+
         $product = Product::find($id);
         $product->title = $Request->input('title');
         $product->price = $Request->input('price');
