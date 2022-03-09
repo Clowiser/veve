@@ -6,15 +6,23 @@ use App\Models\Category;
 use App\Models\Product;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
+use function PHPUnit\Framework\isEmpty;
 
 class BackOfficeController extends Controller
 {
     public function index()
     {
-        //first() = du premier au dernier .... latest() = du dernier au premier
-        $productsList = Product::first()->paginate(5);
-        return view('index', ['products'=>$productsList]);
+        //first() = du premier au dernier .... latest() = du dernier au premier;
+        if(Product::all()->isEmpty()){
+            $categorie = Category::all();
+            return view('add', ['categorie' => $categorie]);
+
+        } else {
+            $productsList = Product::first()->paginate(5);
+            return view('index', ['products' => $productsList]);
+        }
     }
+
 
     public function create()
     {
