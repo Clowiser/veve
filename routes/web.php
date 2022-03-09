@@ -55,10 +55,5 @@ Route::get('cart/update/{id}', [CartController::class, 'add']);
 Route::get('cart/undo/{id}', [CartController::class, 'undo']);
 Route::get('cart/remove/{id}',[CartController::class, 'remove']);
 
-
-Route::get('/session/set/{id}',[SessionController::class, 'storeSessionDate']);
-Route::get('/session/get',[SessionController::class, 'getSessionData']);
-Route::get('/session/remove/{id}',[SessionController::class, 'deleteSessionData']);
-
 Route::get('products', [ProductsController::class, 'index']);
 Route::get('product/{id}', [ProductsController::class, 'show']);

@@ -19,36 +19,11 @@ class CartController extends Controller
         if(!$product) {
             abort(404);
         }
-        $cart = session()->get('cart');
-        // if cart is empty then this the first product
-        if(!$cart) {
-            $cart = [
-                    $id => [
-                        "id" => $product->id,
-                        "title" => $product->title,
-                        "quantity" => 1,
-                        "price" => $product->price,
-                        "image" => $product->image
-                    ]
-            ];
-            session()->put('cart', $cart);
-            return redirect('/cart');
-        }
-        // if cart not empty then check if this product exist then increment quantity
-        if(isset($cart[$id])) {
-            $cart[$id]['quantity']++;
-            session()->put('cart', $cart);
-            return redirect('/cart');
-        }
-        // if item not exist in cart then add to cart with quantity = 1
-        $cart[$id] = [
-            "id" => $product->id,
-            "title" => $product->title,
-            "quantity" => 1,
-            "price" => $product->price,
-            "image" => $product->image
-        ];
-        session()->put('cart', $cart);
+
+        $cart = Cart::find(1);
+
+        $cart->products()->attach($product);   
+
         return redirect('/cart');
     }
 
@@ -80,15 +55,13 @@ class CartController extends Controller
 
     }
     public function remove($id)
-    {
-        if(session()->get('cart')) {
-            $cart = session()->get('cart');
-            if(isset($cart[$id])) {
-                unset($cart[$id]);
-                session()->put('cart', $cart);
-            }
+    {   
+        $cart = Cart::find(1);
+
+        $cart->products()->detach($id);   
+
             return redirect('/cart');
-        }
+        
     }
 
 }
