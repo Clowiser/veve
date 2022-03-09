@@ -62,14 +62,5 @@ Route::get('/session/set/{id}',[SessionController::class, 'storeSessionDate']);
 Route::get('/session/get',[SessionController::class, 'getSessionData']);
 Route::get('/session/remove/{id}',[SessionController::class, 'deleteSessionData']);
 
-
-Route::get('backoffice/add', [BackOfficeController::class, 'create']);
-Route::post('backoffice', [BackOfficeController::class, 'add']);
-
-Route::get('backoffice/edit/{id}', [BackOfficeController::class, 'update']);
-Route::post('backoffice/edit/{id}', [BackOfficeController::class, 'edit']);
-
-Route::get('backoffice/delete/{id}', [BackOfficeController::class, 'delete']);
-
 Route::get('products', [ProductsController::class, 'index']);
 Route::get('product/{id}', [ProductsController::class, 'show']);
