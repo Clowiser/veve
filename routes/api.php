@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Api\ProductsController;
+use App\Http\Api\AuthController;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -26,3 +27,7 @@ Route::delete('product/{id}', [ProductsController::class, 'destroy']);
 
 //Créer un produit
 Route::post('products', [ProductsController::class, 'create']);
+
+//Authentification API
+Route::post('inscription', [AuthController::class, 'SignUpUser']);
+Route::post('connexion', [AuthController::class, 'connexion']);

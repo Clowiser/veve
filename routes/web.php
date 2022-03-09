@@ -5,8 +5,6 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\BackOfficeController;
 
-use App\Http\Api\ProductsController;
-
 use Illuminate\Support\Facades\Route;
 
 
@@ -36,6 +34,3 @@ Route::delete('index/delete/{id}', [BackOfficeController::class, 'destroy']); //
 // PUT pour mettre à jour une ressource
 // POST pour insérer une ressource + requête au serveur qui renvoie la ressource concernée 
 // DELETE pour supprimer une ressource
-
-Route::get('products', [ProductsController::class, 'showListApi']);
-Route::get('product/{id}', [ProductsController::class, 'showProductApi']);
