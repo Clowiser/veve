@@ -10,6 +10,8 @@
     {{-- Create --}}
     <a href="{{url('index/create')}}" class="btn btn-primary btn-sm bg-primary rounded-pill">Add</a>
 
+    <a href="compte" class="btn btn-warning rounded-pill btn-sm">Retour au compte</a>
+
 
     <div class="container-fluid d-flex justify-content-center margin">
         <div class="row mt-1">

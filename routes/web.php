@@ -21,18 +21,18 @@ Route::get('cart', [CartController::class, 'showCart']);
 
 //BackOffice
 //page accueil
-Route::get('index', [BackOfficeController::class, 'index']); // get : j'accède à la ressource index
+Route::get('index', [BackOfficeController::class, 'index'])->middleware('App\Http\Middleware\Auth'); // get : j'accède à la ressource index
 
 //editer un produit
-Route::get('index/edit/{id}', [BackOfficeController::class, 'edit']); // get : j'accède à la ressource edit id
-Route::put('index/edit/{id}', [BackOfficeController::class, 'update']); //put : je met à jour la ressource 
+Route::get('index/edit/{id}', [BackOfficeController::class, 'edit'])->middleware('App\Http\Middleware\Auth'); // get : j'accède à la ressource edit id
+Route::put('index/edit/{id}', [BackOfficeController::class, 'update'])->middleware('App\Http\Middleware\Auth'); //put : je met à jour la ressource 
 
 //créer un produit
-Route::get('index/create', [BackOfficeController::class, 'create']); // get : j'accède à la view create
-Route::post('index', [BackOfficeController::class, 'store']); // post : soumission de formulaire : ajoute une ressource
+Route::get('index/create', [BackOfficeController::class, 'create'])->middleware('App\Http\Middleware\Auth'); // get : j'accède à la view create
+Route::post('index', [BackOfficeController::class, 'store'])->middleware('App\Http\Middleware\Auth'); // post : soumission de formulaire : ajoute une ressource
 
 //supprimer un produit
-Route::delete('index/delete/{id}', [BackOfficeController::class, 'destroy']); // je supprime la ressource à l'id indiqué
+Route::delete('index/delete/{id}', [BackOfficeController::class, 'destroy'])->middleware('App\Http\Middleware\Auth'); // je supprime la ressource à l'id indiqué
 
 // GET pour accéder à la ressource 
 // PUT pour mettre à jour une ressource
