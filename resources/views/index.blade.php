@@ -41,5 +41,40 @@
         {!! $products->links() !!}
     </div>
 
+
+
+    <a href="{{url('/backoffice/addcat')}}" @class('btn btn-outline-success bg-success w-25 rounded-pill mb-5 mt-5')>Ajouter une categorie</a>
+    <table class="table">
+        <thead>
+        <tr>
+            <th scope="col">Id</th>
+            <th scope="col">Name</th>
+            <th scope="col"></th>
+            <th scope="col"></th>
+            <th scope="col"></th>
+            <th scope="col"></th>
+        </tr>
+        </thead>
+        <tbody>
+        @foreach($categorie as $category)
+            <tr>
+                <td>{{$category->id}}</td>
+                <td>{{$category->name}}</td>
+                <td></td>
+                <td></td>
+                <td>
+                    <a href="{{url('backoffice/editcat/'.$category->id)}}" class="w-50 btn btn-warning btn-sm bg-warning rounded-pill">Editer</a>
+                </td>
+                <td>
+                    <a href="{{url('backoffice/deletecat/'.$category->id)}}" class="w-50 btn btn-danger btn-sm bg-danger rounded-pill">Supprimer</a>
+                </td>
+            </tr>
+        @endforeach
+        </tbody>
+    </table>
+{{--    <div class="d-flex justify-content-center">--}}
+{{--        {!! $category->links() !!}--}}
+{{--    </div>--}}
+
 </div>
 @endsection

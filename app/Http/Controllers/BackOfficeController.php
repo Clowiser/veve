@@ -6,23 +6,24 @@ use App\Models\Category;
 use App\Models\Product;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
-use function PHPUnit\Framework\isEmpty;
 
 class BackOfficeController extends Controller
 {
+
+    //CRUD FOR PRODUCTS
+
     public function index()
     {
         //first() = du premier au dernier .... latest() = du dernier au premier;
         if(Product::all()->isEmpty()){
             $categorie = Category::all();
             return view('add', ['categorie' => $categorie]);
-
         } else {
             $productsList = Product::first()->paginate(5);
-            return view('index', ['products' => $productsList]);
+            $categorie = Category::all();
+            return view('index', ['products' => $productsList, 'categorie' => $categorie]);
         }
     }
-
 
     public function create()
     {
@@ -112,6 +113,65 @@ class BackOfficeController extends Controller
         $product = Product::find($id);
         $product->categories()->detach();
         $product->delete();
+
+        return redirect('/backoffice')->with('success','Produit supprimer avec succés.');
+    }
+
+
+// CRUD FOR CATEGORIES
+
+    public function createCat()
+    {
+        $categorie = Category::all();
+        return view('addcat', ['categorie' => $categorie]);
+    }
+
+    public function addCat(Request $request)
+    {
+        $validator = Validator::make($request->all(),[
+            'name' => 'bail|required',
+        ]);
+
+        if ($validator->fails()) {
+            return back()->withErrors($validator)->withInput();
+        }
+
+        $category = new Category();
+        $category->name = $request->input('name');
+        $category->save();
+
+        return redirect('/backoffice')->with('success','Categorie ajouter avec succés.');
+    }
+
+    public function updateCat(int $id)
+    {
+
+        $category = Category::find($id);
+
+        return view('editcat', [ 'category' => $category]);
+    }
+
+    public function editCat(int $id, Request $request)
+    {
+        $validator = Validator::make($request->all(),[
+            'name' => 'bail|required',
+        ]);
+
+        if ($validator->fails()) {
+            return back()->withErrors($validator)->withInput();
+        }
+
+        $category = Category::find($id);
+        $category->name = $request->input('name');
+        $category->save();
+
+        return redirect('/backoffice')->with('success','Categorie editer avec succés.');
+    }
+
+    public function deleteCat($id)
+    {
+        $category = Category::find($id);
+        $category->delete();
 
         return redirect('/backoffice')->with('success','Produit supprimer avec succés.');
     }
