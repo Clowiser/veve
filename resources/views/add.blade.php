@@ -9,7 +9,7 @@
         <div class="row mt-5">
             <div class="card-body pt-0 px-0">
                 <div class="panel-body">
-                    <br><form class="" action="/backoffice" method="POST">
+                    <br><form class="" action="/backoffice/add" method="POST">
                         {{ csrf_field() }}
                         <div class="form-group">
                             <label for="description">Description du produit:</label>

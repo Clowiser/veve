@@ -9,7 +9,7 @@
         <div class="row mt-5">
             <div class="card-body pt-0 px-0">
                 <div class="panel-body">
-                    <br><form class="" action="/backoffice" method="POST">
+                    <br><form class="" action="/backoffice/addcat" method="POST">
                         {{ csrf_field() }}
                         <div class="form-group">
                             <label for="name">Nom de la catégorie:</label>
@@ -18,7 +18,7 @@
                             <div class="invalid-feedback">{{ $message }}</div>
                             @enderror
                         </div>
-                        <div class="mx-3 mb-2"><button @class("btn btn-outline-primary rounded-pill")>Ajouter le produit</button></div>
+                        <div class="mx-3 mb-2"><button @class("btn btn-outline-primary rounded-pill")>Ajouter la categorie</button></div>
                     </form>
                     <div class="mx-3 mb-2"><a href="{{url('backoffice')}}" @class("btn btn-outline-primary rounded-pill")>Retour</a></div>
                 </div>

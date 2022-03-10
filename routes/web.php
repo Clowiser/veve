@@ -34,7 +34,7 @@ Route::group(['middleware' => ['auth']], function () {
     Route::get('backoffice', [BackOfficeController::class, 'index']);
 
     Route::get('backoffice/add', [BackOfficeController::class, 'create']);
-    Route::post('backoffice', [BackOfficeController::class, 'add']);
+    Route::post('backoffice/add', [BackOfficeController::class, 'add']);
 
     Route::get('backoffice/edit/{id}', [BackOfficeController::class, 'update']);
     Route::post('backoffice/edit/{id}', [BackOfficeController::class, 'edit']);
@@ -43,7 +43,7 @@ Route::group(['middleware' => ['auth']], function () {
     Route::get('backoffice/deletecat/{id}', [BackOfficeController::class, 'deleteCat']);
 
     Route::get('backoffice/addcat', [BackOfficeController::class, 'createCat']);
-    Route::post('backoffice', [BackOfficeController::class, 'addCat']);
+    Route::post('backoffice/addcat', [BackOfficeController::class, 'addCat']);
 
     Route::get('backoffice/editcat/{id}', [BackOfficeController::class, 'updateCat']);
     Route::post('backoffice/editcat/{id}', [BackOfficeController::class, 'editCat']);

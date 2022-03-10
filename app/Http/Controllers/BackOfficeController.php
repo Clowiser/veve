@@ -14,8 +14,10 @@ class BackOfficeController extends Controller
 
     public function index()
     {
-        //first() = du premier au dernier .... latest() = du dernier au premier;
-        if(Product::all()->isEmpty()){
+        //first() = du premier au dernier .... latest() =
+        if (Category::all()->isEmpty()){
+            return view('addcat');
+        } elseif(Product::all()->isEmpty()){
             $categorie = Category::all();
             return view('add', ['categorie' => $categorie]);
         } else {
@@ -163,6 +165,7 @@ class BackOfficeController extends Controller
 
         $category = Category::find($id);
         $category->name = $request->input('name');
+
         $category->save();
 
         return redirect('/backoffice')->with('success','Categorie editer avec succés.');
