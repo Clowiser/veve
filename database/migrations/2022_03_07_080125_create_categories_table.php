@@ -20,7 +20,7 @@ class CreateCategoriesTable extends Migration
         Schema::table('products', function (Blueprint $table) {
             $table->integer('category_id')->unsigned()->index();
             //convention: nom du model qui va être lié au singulier + unsigned = pas de signe/pas négatif + index = c'est un index
-            //va donc s'intégrer à la table products
+            //va donc s'intégrer à la table products    
         });
     }
 

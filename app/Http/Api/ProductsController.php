@@ -15,7 +15,7 @@ class ProductsController
 
         //return response()->json($products); // on retourne les informations des produits en JSON
 
-        return response()->json([    
+        return response()->json([    // retour en JSON
             'message'=> 'liste des produits affichés',      
             'donnees'=> $products]); 
     }
@@ -71,10 +71,10 @@ class ProductsController
         return response([          
             'message'=> 'suppression reussi'   
            ], 204); 
-        //    on utilise le code 204 pour signifier que l’action de suppression est réussi
+        //    code 204 : signifie que l’action de suppression est réussie
     }
    
 }
 
-//API REST en lecture = sur le navigateur
+//API REST en lecture = sur le navigateur : rentrer simplement l'adresse http://127.0.0.1:8000/api/products sur le nav (retour format JSON)
 //API REST en écriture = sur postman

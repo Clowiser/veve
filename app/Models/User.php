@@ -5,6 +5,7 @@ namespace App\Models;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
+use Illuminate\Auth\Authenticatable as BasicAuthenticatable;
 use Illuminate\Notifications\Notifiable;
 
 use Laravel\Sanctum\HasApiTokens; 
@@ -18,6 +19,9 @@ class User extends Authenticatable
      *
      * @var array
      */
+
+    use BasicAuthenticatable;
+    
     protected $fillable = [
         'first_name', 'last_name', 'email', 'password',
     ];
@@ -39,4 +43,10 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    //correction du problème avec le remmember token pour le bouton déconnexion
+    public function getRememberTokenName()
+    {
+        return '';
+    }
 }

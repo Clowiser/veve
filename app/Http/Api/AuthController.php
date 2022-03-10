@@ -15,7 +15,7 @@ use App\Models\User;
 class AuthController extends BaseController
 {
     // methode d'authentification
-    public function SignIn(Request $request)
+    public function signIn(Request $request)
     {
     if(Auth::attempt(['email' => $request->email, 'password' => $request->password])){ 
             $authUser = Auth::user(); 
@@ -31,7 +31,7 @@ class AuthController extends BaseController
 }
 
     // methode d'inscription pour permettre d'enregistrer un nouvel utilisateur
-    public function SignUp(Request $request)
+    public function signUp(Request $request)
     {
         $validator = \Validator::make($request->all(), [ //la validation
             'first_name' => 'required',

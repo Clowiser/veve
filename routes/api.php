@@ -33,5 +33,5 @@ Route::post('products', [ProductsController::class, 'create']);
 
 
 //Authentification API
-Route::post('inscription', [AuthController::class, 'SignUp']);
-Route::post('connexion', [AuthController::class, 'SignIn']);
+Route::post('inscription', [AuthController::class, 'signUp']);
+Route::post('connexion', [AuthController::class, 'signIn']);
