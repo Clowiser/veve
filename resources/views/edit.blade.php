@@ -20,7 +20,6 @@
                     {{-- {{ csrf_field() }} --}}
                     @method('PUT')
                     
-
                     <div class="form-group">
                         <label for="title">Nom :</label>
                         <input type="text" class="form-control" name="title" value="{{ $product->title }}" placeholder="Saisir un nom">
@@ -48,6 +47,18 @@
                             }
                             @endforeach
                         </select>
+
+                        {{-- <p>{{ $category }}</p>
+                        <p>{{ $product->category_id }}</p>
+                        <select class="form-control" name="category_name">
+                            <option value="">{{ $product->category_id }}</option>
+
+                            @foreach ($category as $value) 
+                            {
+                            <option value="{{ $value }}">{{ $value }}</option>
+                            }
+                            @endforeach
+                        </select> --}}
                     </div>
 
                     <div class="form-group">

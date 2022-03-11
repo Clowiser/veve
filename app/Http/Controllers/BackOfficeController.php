@@ -17,6 +17,7 @@ class BackOfficeController extends Controller
     {
         $products = Product::all()->sortby('price');
         return view('index', ['products' => $products]);
+        // return view('index', compact('products'));
     }
     //permet d'afficher une liste d'une ressource => la liste des produits
 
@@ -67,7 +68,6 @@ class BackOfficeController extends Controller
         
         $product = Product::find($id);
         $category = Category::pluck('name', 'id'); 
-        // dd($category);
         //récupérer la liste que l'on va envoyer au select donc on le rajoute au compact
         return view('edit', compact('product', 'category'));
     }
@@ -82,6 +82,7 @@ class BackOfficeController extends Controller
             'price' => 'bail|required|integer',
             'image' => 'bail|required|url',
             'category_id' => 'bail|required|integer',
+
          ]);
 
          if($validator->fails()){
@@ -96,6 +97,8 @@ class BackOfficeController extends Controller
         $product->description = $Request->input('description');
         $product->image = $Request->input('image');
         $product->category_id = $Request->input('category_id');
+        // $product->category_id = $Request->input('name');
+    
 
         $product->save();
 
